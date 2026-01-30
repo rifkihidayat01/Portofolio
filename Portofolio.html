@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Rifki Nurhidayat</title>
+    <meta name="description" content="Portofolio Rifki Nurhidayat - Lulusan S1 Sistem Informasi Universitas Teknokrat Indonesia.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Markdown Parser for AI Responses -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue 600
+                        secondary: '#1e293b', // Slate 800
+                        accent: '#3b82f6', // Blue 500
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        /* Chat Widget Styles */
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        .markdown-body p { margin-bottom: 0.5em; }
+        .markdown-body ul { list-style-type: disc; margin-left: 1.5em; margin-bottom: 0.5em; }
+        .markdown-body strong { font-weight: 700; color: #1e293b; }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased bg-slate-50 selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <img 
+                    src="IMG-20260107-WA0001.jpg.jpeg" 
+                    alt="Rifki Nurhidayat"
+                    class="w-8 h-8 rounded-full object-cover border border-slate-300"
+    >
+                    <!-- <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">R</div> -->
+                    <span class="font-bold text-xl text-slate-800 tracking-tight">Rifki Nurhidayat</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-slate-600 hover:text-primary font-medium transition-colors">Beranda</a>
+                    <a href="#about" class="text-slate-600 hover:text-primary font-medium transition-colors">Tentang</a>
+                    <a href="#experience" class="text-slate-600 hover:text-primary font-medium transition-colors">Pengalaman</a>
+                    <a href="#skills" class="text-slate-600 hover:text-primary font-medium transition-colors">Keahlian</a>
+                    <a href="#projects" class="text-slate-600 hover:text-primary font-medium transition-colors">Projek</a>
+                    <a href="#achievements" class="text-slate-600 hover:text-primary font-medium transition-colors">Prestasi</a>
+                    <a href="#contact" class="text-slate-600 hover:text-primary font-medium transition-colors">Kontak</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Beranda</a>
+                <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Tentang</a>
+                <a href="#experience" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Pengalaman</a>
+                <a href="#skills" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Keahlian</a>
+                <a href="#projects" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Projek</a>
+                <a href="#achievements" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Prestasi</a>
+                <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Blobs -->
+        <div class="blob bg-blue-300 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob bg-indigo-200 w-80 h-80 rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 text-primary font-semibold text-sm tracking-wide shadow-sm border border-blue-100">
+                PORTOFOLIO
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-tight">
+                Halo, Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Rifki Nurhidayat</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Lulusan Terbaik & Teladan dengan IPK 3.68. Berpengalaman dalam Administrasi, IT Support, Analisis Data, dan Manajemen Database.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-3.5 rounded-full bg-primary text-white font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30 flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i> Hubungi Saya
+                </a>
+                <button onclick="toggleChat()" class="px-8 py-3.5 rounded-full bg-white text-slate-700 font-semibold border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center gap-2 group">
+                    <i class="fas fa-robot text-primary group-hover:scale-110 transition-transform"></i> Tanya Asisten AI
+                </button>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-slate-200 pt-8">
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">3.68</div>
+                    <div class="text-sm text-slate-500 mt-1">IPK (Cumlaude)</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">3.5</div>
+                    <div class="text-sm text-slate-500 mt-1">Tahun Studi</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">2+</div>
+                    <div class="text-sm text-slate-500 mt-1">Tahun Pengalaman</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">10+</div>
+                    <div class="text-sm text-slate-500 mt-1">Sertifikasi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Profile Card with Photo -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-0"></div>
+                    <div class="relative z-10 bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-xl">
+                        
+                        <!-- Updated: Photo Area -->
+                        <div class="flex flex-col sm:flex-row items-center gap-6 mb-8">
+                            <div class="shrink-0">
+                                <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden bg-slate-200">
+                                    
+                                    <!-- FOTO PROFIL -->
+                                    <!-- CARA GANTI: Upload foto Anda ke folder proyek, lalu ganti link di bawah (src) dengan nama file foto Anda. -->
+                                    <!-- Contoh: src="foto-profil.jpg" atau src="images/saya.png" -->
+                                    <img src="IMG-20260107-WA0001.jpg.jpeg" alt="Foto Profil" class="w-full h-full object-cover">
+                                    
+                                </div>
+                            </div>
+                            <div class="text-center sm:text-left">
+                                <h3 class="font-bold text-2xl text-slate-900">Rifki Nurhidayat</h3>
+                                <div class="text-primary font-medium mb-1">S.Kom (Sistem Informasi)</div>
+                                <div class="text-slate-500 text-sm flex items-center justify-center sm:justify-start gap-2">
+                                    <i class="fas fa-map-marker-alt"></i> Labuhan Ratu, Bandar Lampung
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Saya adalah Fresh Graduate S1 Sistem Informasi Universitas Teknokrat Indonesia. Selama masa studi, saya aktif dalam organisasi mahasiswa dan kepanitiaan yang membentuk keterampilan kerjasama tim, kepemimpinan, dan komunikasi yang kuat.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            Pengalaman sebagai Asisten Dosen dan Magang di BUMN memperkuat kemampuan teknis saya dalam Administrasi Perkantoran, IT Support, dan Analisis Data. Saya siap berkontribusi untuk inovasi perusahaan Anda.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Timeline -->
+                <div class="pt-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Pendidikan</h2>
+                    <div class="space-y-10">
+                        <div class="relative pl-8 border-l-2 border-primary/30">
+                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-sm"></div>
+                            <h3 class="text-xl font-bold text-slate-900">S1 Sistem Informasi</h3>
+                            <div class="text-primary font-semibold mb-1">Universitas Teknokrat Indonesia</div>
+                            <div class="text-sm text-slate-500 mb-2">Sep 2021 - Nov 2024</div>
+                            <p class="text-slate-600 mb-2">
+                                Lulusan Terbaik II & Teladan III FTIK. Aktif di HIMASI dan IBATEK.
+                            </p>
+                            <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">IPK 3.68</div>
+                        </div>
+                        <div class="relative pl-8 border-l-2 border-slate-200">
+                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-400 border-4 border-white shadow-sm"></div>
+                            <h3 class="text-xl font-bold text-slate-900">Ilmu Pengetahuan Sosial</h3>
+                            <div class="text-slate-700 font-semibold mb-1">SMA Negeri 1 Kalirejo</div>
+                            <div class="text-sm text-slate-500">2018 - 2021</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Pengalaman Kerja</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-slate-100">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-blue-50 text-primary p-3 rounded-lg">
+                            <i class="fas fa-bus text-2xl"></i>
+                        </div>
+                        <span class="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">Feb 2024 - Jul 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Bagian Usaha (Magang BUMN)</h3>
+                    <div class="text-slate-600 font-medium mb-4">Perum DAMRI Cabang Lampung</div>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex gap-2">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Mengelola Sistem Informasi Manajemen (E-Tiketing, Fleet Management System).</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Troubleshooting komputer dan perbaikan jaringan perusahaan.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Memastikan validitas dan akurasi data laporan harian.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-slate-100">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-indigo-50 text-indigo-600 p-3 rounded-lg">
+                            <i class="fas fa-chalkboard-teacher text-2xl"></i>
+                        </div>
+                        <span class="bg-slate-100 text-slate-600 text-xs px-3 py-1 rounded-full font-medium">Sep 2023 - Jun 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-1">Asisten Dosen Laboratorium</h3>
+                    <div class="text-slate-600 font-medium mb-4">Universitas Teknokrat Indonesia</div>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex gap-2">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Mengajar Praktikum Jaringan, Troubleshooting, OS, Ms. Office, Data Mining, & Pemrograman.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Mendampingi 40-50 mahasiswa per kelas dalam pembelajaran teknis.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+<!-- Organization Experience -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Pengalaman Organisasi</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Organization Card 1 with Photo -->
+                    <div class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                        <!-- Space for Organization Photo -->
+                        <div class="h-40 bg-slate-100 relative group cursor-pointer overflow-hidden">
+                            <!-- FOTO ORGANISASI 1 -->
+                            <!-- Ganti link src di bawah dengan foto kegiatan HIMASI -->
+                            <img src="him.jpeg">
+                        </div>
+                        <div class="p-6">
+                            <div class="font-bold text-lg text-slate-900">Ketua Umum</div>
+                            <div class="text-primary text-sm mb-2">Himpunan Mahasiswa Sistem Informasi (HIMASI)</div>
+                            <div class="text-xs text-slate-400">Mar 2024 - Jan 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Organization Card 2 with Photo -->
+                    <div class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                        <!-- Space for Organization Photo -->
+                        <div class="h-40 bg-slate-100 relative group cursor-pointer overflow-hidden">
+                            <!-- FOTO ORGANISASI 2 -->
+                            <!-- Ganti link src di bawah dengan foto kegiatan IBATEK -->
+                            <img src="ib.jpeg" alt="Foto Kegiatan IBATEK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="font-bold text-lg text-slate-900">Wakil Ketua Umum</div>
+                            <div class="text-primary text-sm mb-2">Ikatan Beasiswa Teknokrat (IBATEK)</div>
+                            <div class="text-xs text-slate-400">Mar 2023 - Mar 2024</div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Organization Card 3 with Photo -->
+                    <div class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                        <!-- Space for Organization Photo -->
+                        <div class="h-40 bg-slate-100 relative group cursor-pointer overflow-hidden">
+                            <!-- FOTO ORGANISASI 3 -->
+                            <!-- Ganti link src di bawah dengan foto kegiatan HIMASI Divisi Pendidikan -->
+                            <img src="Semester 1 akhir diminta gabung Hima SI dan sampai sekarang masih menjadi bagian dari HIMA SI.T.webp" alt="Foto Kegiatan Organisasi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="font-bold text-lg text-slate-900">Ketua Divisi Pendidikan</div>
+                            <div class="text-primary text-sm mb-2">HIMASI</div>
+                            <div class="text-xs text-slate-400">Feb 2022 - Feb 2023</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Keahlian & Kompetensi</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Hard Skills -->
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <i class="fas fa-code text-primary"></i> Kemampuan Teknis (Hard Skills)
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Microsoft Office</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Rapidminer</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Tableau</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Google Collab</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Jaringan Komputer</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-100">Troubleshooting</span>
+                        <span class="px-4 py-2 bg-teal-50 text-teal-700 rounded-lg text-sm font-medium border border-teal-100">Photoshop</span>
+                        <span class="px-4 py-2 bg-teal-50 text-teal-700 rounded-lg text-sm font-medium border border-teal-100">CorelDraw</span>
+                        <span class="px-4 py-2 bg-teal-50 text-teal-700 rounded-lg text-sm font-medium border border-teal-100">Canva</span>
+                        <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">Database Admin</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <i class="fas fa-users text-primary"></i> Kemampuan Personal (Soft Skills)
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Kepemimpinan</span>
+                                <span class="text-sm font-medium text-slate-500">Experienced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="bg-primary h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Kerjasama Tim</span>
+                                <span class="text-sm font-medium text-slate-500">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Manajemen Waktu</span>
+                                <span class="text-sm font-medium text-slate-500">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Pemecahan Masalah</span>
+                                <span class="text-sm font-medium text-slate-500">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Projek Terpilih</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600">keahlian teknis dan manajemen sistem.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:-translate-y-1">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden group">
+                        
+                        <!-- FOTO PROJEK 1 -->
+                        <!-- CARA GANTI: Ganti src di bawah dengan gambar screenshot aplikasi/kegiatan Anda -->
+                        <img src="p1.JPG" alt="Manajemen Fleet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Website E-Commerce</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            Implementasi dan pengembangan website e-commerce untuk produk UMKM, mencakup pengelolaan katalog produk, sistem pemesanan, keranjang belanja, serta tampilan antarmuka yang responsif guna meningkatkan pengalaman pengguna dan efektivitas penjualan online.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">Website</span>
+                            <span class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">Desain Web</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:-translate-y-1">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden group">
+                        
+                        <!-- FOTO PROJEK 2 -->
+                        <!-- CARA GANTI: Ganti src di bawah dengan gambar screenshot analisis data Anda -->
+                        <img src="p2.jpg" alt="Analisis Data" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Analisis Data Operasional</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            Projek analisis data menggunakan Rapidminer dan Tableau untuk memvisualisasikan tren operasional dan memberikan wawasan berbasis data bagi pengambilan keputusan.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">Rapidminer</span>
+                            <span class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">Tableau</span>
+                            <span class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">Excel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:-translate-y-1">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden group">
+                        
+                        <!-- FOTO PROJEK 3 -->
+                        <!-- CARA GANTI: Ganti src di bawah dengan gambar desain Anda -->
+                        <img src="p3.JPG" alt="Desain Grafis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Projek Akhir Kuliah</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            Penelitian analisis sentimen komentar media sosial Twitter terhadap Tes CPNS menggunakan algoritma Naive Bayes untuk mengklasifikasikan opini publik menjadi sentimen positif, negatif, dan netral sebagai bahan evaluasi berbasis data.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">Google Collab</span>
+                            <span class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md">Analisis Data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Certifications -->
+    <section id="achievements" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Prestasi & Sertifikat</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600">Dedikasi saya dalam pengembangan diri dan kompetisi.</p>
+            </div>
+
+            <!-- Awards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border-t-4 border-yellow-400 border-x border-b border-slate-100">
+                    <i class="fas fa-trophy text-yellow-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg text-slate-900">Lulusan Teladan III</h3>
+                    <p class="text-sm text-slate-500">Fakultas Teknik dan Ilmu Komputer, 2025</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border-t-4 border-yellow-400 border-x border-b border-slate-100">
+                    <i class="fas fa-medal text-yellow-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg text-slate-900">Lulusan Terbaik II</h3>
+                    <p class="text-sm text-slate-500">S1 Sistem Informasi, 2025</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all border-t-4 border-blue-400 border-x border-b border-slate-100">
+                    <i class="fas fa-award text-blue-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg text-slate-900">Juara 2 Multimedia</h3>
+                    <p class="text-sm text-slate-500">Akademik Expo 2023</p>
+                </div>
+            </div>
+
+            <!-- Certificate Gallery (NEW) -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center">Galeri Sertifikat</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Certificate Item 1 -->
+                    <div class="group relative bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden group">
+                            
+                            <!-- FOTO SERTIFIKAT 1 -->
+                            <!-- CARA GANTI: Ganti src di bawah dengan scan sertifikat Anda -->
+                            <img src="WhatsApp Image 2025-08-03 at 15.04.38 (1).jpeg" alt="Sertifikat Lulusan Terbaik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-slate-900 mb-1">Lulusan Terbaik II SI & Teladan III FTIK </h4>
+                            <p class="text-xs text-slate-500">Universitas Teknokrat Indonesia</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Item 2 -->
+                    <div class="group relative bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden group">
+                            
+                            <!-- FOTO SERTIFIKAT 2 -->
+                            <!-- CARA GANTI: Ganti src di bawah dengan scan sertifikat Anda -->
+                            <img src="Sertifikat kompetensi Aplikom_001.png" alt="Sertifikat Kompetensi Admin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-slate-900 mb-1">Kompetensi Adm. Perkantoran</h4>
+                            <p class="text-xs text-slate-500">Sertifikasi Kompetensi</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Item 3 -->
+                    <div class="group relative bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden group">
+                            
+                            <!-- FOTO SERTIFIKAT 3 -->
+                            <!-- CARA GANTI: Ganti src di bawah dengan scan sertifikat Anda -->
+                            <img src="Sertifikat kompetensi Jaringan komputer_001.png" alt="Sertifikat Data Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-slate-900 mb-1">Kompetensi Jaringan komputer</h4>
+                            <p class="text-xs text-slate-500">Sertifikasi Kompetensi</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Item 3 -->
+                    <div class="group relative bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden group">
+                            
+                            <!-- FOTO SERTIFIKAT 3 -->
+                            <!-- CARA GANTI: Ganti src di bawah dengan scan sertifikat Anda -->
+                            <img src="Sertifikat Kompetensi Desain Grafis_001.png" alt="Sertifikat Data Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-slate-900 mb-1">Kompetensi Desain Grafis</h4>
+                            <p class="text-xs text-slate-500">Sertifikasi Kompetensi</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Item 3 -->
+                    <div class="group relative bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden group">
+                            
+                            <!-- FOTO SERTIFIKAT 3 -->
+                            <!-- CARA GANTI: Ganti src di bawah dengan scan sertifikat Anda -->
+                            <img src="Sertifikat Intensive Camp - Rifki Nurhidayat (1)_001.png" alt="Sertifikat Data Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-slate-900 mb-1">Kompetensi Machine Learning</h4>
+                            <p class="text-xs text-slate-500">Sertifikasi Kompetensi</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Item 3 -->
+                    <div class="group relative bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden group">
+                            
+                            <!-- FOTO SERTIFIKAT 3 -->
+                            <!-- CARA GANTI: Ganti src di bawah dengan scan sertifikat Anda -->
+                            <img src="Rifki Nurhidayat_001.png" alt="Sertifikat Data Analyst" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-slate-900 mb-1">Junior Data Analyst</h4>
+                            <p class="text-xs text-slate-500">Sertifikasi Kompetensi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificates List (Text) -->
+            <div class="bg-white rounded-2xl shadow-sm p-8 border border-slate-100">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 border-b pb-4">Daftar Lengkap Sertifikasi</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Kompetensi Machine Learning (2026)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Kompetensi Komputer Administrasi Perkantoran (2024)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Kompetensi Desain Grafis (2024)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Pelatihan Pemrograman Mobile (2024)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Junior Data Analyst (2023)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Junior Video Editor (2023)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Junior Technopreneurship (2023)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-certificate text-slate-400"></i>
+                        <span class="text-slate-700">Peserta Penambang Data GEMASTIK (2024)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Flex Container for Layout (Text Left, Image Right) -->
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-8">
+                
+                <!-- Text Content (Left Side) -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-50 text-primary font-semibold text-sm tracking-wide shadow-sm border border-blue-100">
+                        Portofolio
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-tight">
+                        Halo, Saya <br class="hidden lg:block" /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Rifki Nurhidayat</span>
+                    </h1>
+                            <div>
+                                <div class="text-xs text-slate-500 uppercase tracking-wider">Alamat</div>
+                                <div class="font-medium">Labuhan Ratu, Kec. Kedaton, Bandar Lampung</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-primary">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 uppercase tracking-wider">Telepon / WhatsApp</div>
+                                <div class="font-medium">0858-9695-7352</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-primary">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 uppercase tracking-wider">Email</div>
+                                <a href="mailto:rifkinurhidayat1410@gmail.com" class="font-medium hover:text-primary transition-colors">rifkinurhidayat1410@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex gap-4">
+                        <a href="https://linkedin.com/in/RifkiNurhidayat" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/rifkii_hidayatt" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Simple Contact Form (Frontend Only) -->
+                <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-xl font-bold mb-6">Kirim Pesan</h3>
+                    <form onsubmit="event.preventDefault(); alert('Ini adalah demo. Silakan hubungi via Email atau WhatsApp.');">
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Nama</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Nama Anda">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="email@contoh.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Pesan</label>
+                            <textarea rows="4" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Tulis pesan Anda disini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-8 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2025 Rifki Nurhidayat. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget (Gemini AI) -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        
+        <!-- Chat Window (Hidden by default) -->
+        <div id="chat-window" class="hidden mb-4 w-[350px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 transition-all transform origin-bottom-right">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-primary to-indigo-600 p-4 text-white flex justify-between items-center shadow-md">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
+                        <i class="fas fa-robot text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm">Asisten Virtual Rifki ✨</div>
+                        <div class="text-[10px] text-blue-100 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span> Online
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50 scroll-smooth">
+                <!-- Welcome Message -->
+                <div class="flex items-start gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center shrink-0">
+                        <i class="fas fa-robot text-indigo-600 text-xs"></i>
+                    </div>
+                    <div class="flex flex-col gap-1 max-w-[85%]">
+                        <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm text-sm text-slate-600">
+                            Halo! Saya adalah asisten AI pribadi Rifki. Ada yang bisa saya bantu jelaskan tentang pengalaman atau keahlian Rifki?
+                        </div>
+                        <span class="text-[10px] text-slate-400 ml-1">Baru saja</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-4 bg-white border-t border-slate-100">
+                <!-- Quick Chips -->
+                <div class="flex gap-2 mb-3 overflow-x-auto pb-1 scrollbar-hide">
+                    <button onclick="sendQuickMessage('Apa keahlian utamamu?')" class="whitespace-nowrap px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs rounded-full transition-colors border border-slate-200">
+                        🛠️ Keahlian
+                    </button>
+                    <button onclick="sendQuickMessage('Ceritakan pengalaman kerjamu')" class="whitespace-nowrap px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs rounded-full transition-colors border border-slate-200">
+                        💼 Pengalaman
+                    </button>
+                    <button onclick="sendQuickMessage('Berapa IPK Rifki?')" class="whitespace-nowrap px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs rounded-full transition-colors border border-slate-200">
+                        🎓 IPK
+                    </button>
+                </div>
+                
+                <form onsubmit="handleChatSubmit(event)" class="relative">
+                    <input type="text" id="chat-input" class="w-full pl-4 pr-12 py-3 bg-slate-50 border border-slate-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-slate-400" placeholder="Tanya sesuatu...">
+                    <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed" id="send-btn">
+                        <i class="fas fa-paper-plane text-xs"></i>
+                    </button>
+                </form>
+                <div class="text-center mt-2">
+                    <p class="text-[10px] text-slate-400">Powered by Gemini AI ✨</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Button -->
+        <button onclick="toggleChat()" class="w-14 h-14 bg-gradient-to-br from-primary to-indigo-600 rounded-full shadow-lg hover:shadow-blue-500/40 text-white flex items-center justify-center transition-all hover:scale-110 active:scale-95 group relative">
+            <i class="fas fa-comment-dots text-2xl group-hover:hidden"></i>
+            <i class="fas fa-chevron-down text-xl hidden group-hover:block"></i>
+            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/90', 'bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white/90');
+            }
+        });
+
+        // --- GEMINI AI CHAT LOGIC ---
+        
+        const chatWindow = document.getElementById('chat-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        let isChatOpen = false;
+        let isGenerating = false;
+
+        // System Prompt: Context about Rifki
+        const SYSTEM_PROMPT = `
+            Anda adalah asisten virtual profesional untuk portofolio Rifki Nurhidayat.
+            Tugas Anda adalah menjawab pertanyaan perekrut atau pengunjung tentang Rifki dengan sopan, ringkas, dan persuasif.
+            Gunakan Bahasa Indonesia yang baik.
+            
+            Fakta tentang Rifki Nurhidayat:
+            - Pendidikan: S1 Sistem Informasi, Universitas Teknokrat Indonesia (Lulus 2024).
+            - IPK: 3.68 (Cumlaude, Lulusan Terbaik II, Teladan III).
+            - Pengalaman Kerja 1: Magang di Perum DAMRI Cabang Lampung (Feb-Jul 2024) sebagai Bagian Usaha. Tugas: Mengelola E-Tiketing, Fleet Management System, Troubleshooting Jaringan & PC, Laporan Data Harian.
+            - Pengalaman Kerja 2: Asisten Dosen Laboratorium (Sep 2023-Jun 2025). Mengajar Jaringan, OS, Ms Office, Data Mining.
+            - Keahlian Hard Skills: Microsoft Office (Word, Excel, PPT), Rapidminer, Tableau, Google Collab, Jaringan Komputer, Troubleshooting, Photoshop, CorelDraw, Canva, Database Admin.
+            - Keahlian Soft Skills: Kepemimpinan, Kerjasama Tim, Manajemen Waktu, Public Speaking.
+            - Organisasi: Ketua Umum HIMASI (2024-2025), Wakil Ketua Umum IBATEK (2023-2024).
+            - Prestasi: Juara 2 Multimedia Akademik Expo 2023.
+            - Kontak: Email rifkinurhidayat1410@gmail.com, HP/WA 0858-9695-7352.
+            
+            Instruksi Gaya Bicara:
+            - Bersikaplah ramah dan profesional.
+            - Jika ditanya tentang skill yang tidak ada di list, jawab jujur bahwa Rifki belum mencantumkannya tapi cepat belajar.
+            - Selalu arahkan untuk menghubungi Rifki di bagian Kontak jika pertanyaan terlalu mendalam.
+            - Jawaban maksimal 3-4 kalimat kecuali diminta menjelaskan detail.
+        `;
+
+        function toggleChat() {
+            isChatOpen = !isChatOpen;
+            if (isChatOpen) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => chatInput.focus(), 100);
+            } else {
+                chatWindow.classList.add('hidden');
+            }
+        }
+
+        function sendQuickMessage(text) {
+            chatInput.value = text;
+            handleChatSubmit(new Event('submit'));
+        }
+
+        async function handleChatSubmit(e) {
+            e.preventDefault();
+            const message = chatInput.value.trim();
+            if (!message || isGenerating) return;
+
+            // Add User Message
+            addMessage(message, 'user');
+            chatInput.value = '';
+            isGenerating = true;
+            sendBtn.disabled = true;
+
+            // Add Loading Indicator
+            const loadingId = addLoadingIndicator();
+
+            try {
+                // Call Gemini API
+                const response = await callGeminiAPI(message);
+                
+                // Remove Loading & Add AI Response
+                removeMessage(loadingId);
+                addMessage(response, 'ai');
+            } catch (error) {
+                removeMessage(loadingId);
+                addMessage("Maaf, saya sedang mengalami gangguan koneksi. Silakan coba lagi nanti atau hubungi Rifki langsung.", 'ai');
+                console.error(error);
+            } finally {
+                isGenerating = false;
+                sendBtn.disabled = false;
+                chatInput.focus();
+            }
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `flex items-start gap-2.5 ${sender === 'user' ? 'flex-row-reverse' : ''}`;
+            
+            const avatar = sender === 'ai' 
+                ? `<div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center shrink-0"><i class="fas fa-robot text-indigo-600 text-xs"></i></div>`
+                : `<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center shrink-0"><i class="fas fa-user text-slate-500 text-xs"></i></div>`;
+
+            const bubbleClass = sender === 'ai'
+                ? 'bg-white text-slate-600 border border-slate-100'
+                : 'bg-primary text-white';
+
+            // Parse Markdown for AI responses
+            const content = sender === 'ai' ? marked.parse(text) : text;
+
+            div.innerHTML = `
+                ${avatar}
+                <div class="flex flex-col gap-1 max-w-[85%]">
+                    <div class="p-3 rounded-2xl shadow-sm text-sm ${bubbleClass} ${sender === 'user' ? 'rounded-tr-none' : 'rounded-tl-none'} markdown-body">
+                        ${content}
+                    </div>
+                </div>
+            `;
+            
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div.id;
+        }
+
+        function addLoadingIndicator() {
+            const id = 'loading-' + Date.now();
+            const div = document.createElement('div');
+            div.id = id;
+            div.className = 'flex items-start gap-2.5';
+            div.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center shrink-0"><i class="fas fa-robot text-indigo-600 text-xs"></i></div>
+                <div class="bg-white p-4 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm flex gap-1 items-center h-10">
+                    <div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function removeMessage(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        async function callGeminiAPI(userQuery) {
+            const apiKey = ""; // API Key provided by environment
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [
+                    {
+                        role: "user",
+                        parts: [{ text: userQuery }]
+                    }
+                ],
+                systemInstruction: {
+                    parts: [{ text: SYSTEM_PROMPT }]
+                }
+            };
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) throw new Error('API Error');
+
+            const data = await response.json();
+            return data.candidates[0].content.parts[0].text;
+        }
+    </script>
+</body>
+</html>
